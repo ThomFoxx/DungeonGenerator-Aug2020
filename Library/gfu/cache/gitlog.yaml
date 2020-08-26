@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2020-08-26T17:10:41.848-05:00
+  initializedAtString: 2020-08-26T17:10:41.848-05:00
+  log:
+  - commitID: 7aaee7d23eea5dca44bfb32ff70920b6a0458548
+    mergeA: 
+    mergeB: 
+    authorName: Thom Foxx
+    authorEmail: foxxthom@gmail.com
+    commitEmail: foxxthom@gmail.com
+    commitName: Thom Foxx
+    summary: Initial commit
+    description: 
+    timeString: 2020-08-26T17:10:40.000-05:00
+    commitTimeString: 2020-08-26T17:10:40.000-05:00
+    changes:
+    - path: .gitattributes
+      fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\.gitattributes
+      projectPath: .gitattributes
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: .gitignore
+      fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\.gitignore
+      projectPath: .gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\.gitignore
+      fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Assets\.gitignore
+      projectPath: Assets\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
