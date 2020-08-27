@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-08-26T17:10:41.568-05:00
-  initializedAtString: 2020-08-26T17:10:41.568-05:00
+  lastUpdatedAtString: 2020-08-26T22:06:38.139-05:00
+  initializedAtString: 2020-08-26T18:03:45.234-05:00
   currentGitRemote:
-    name: 
-    url: 
+    name: origin
+    url: https://github.com/ThomFoxx/DungeonGenerator-Aug2020.git
     login: 
     user: 
     host: 
@@ -33,6 +33,6 @@ MonoBehaviour:
       url: 
     trackingBranch: 
   currentConfigRemote:
-    name: 
-    url: 
+    name: origin
+    url: https://github.com/ThomFoxx/DungeonGenerator-Aug2020.git
   currentHead: 

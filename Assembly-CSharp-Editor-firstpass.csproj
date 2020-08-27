@@ -279,6 +279,21 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/GameDevHQ/FileBase/Plugin/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="GitHub.Api.45">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Logging">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Unity.45">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.UnityShim">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+    </Reference>
+    <Reference Include="sfw.net">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -296,21 +311,6 @@
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Api.45">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Unity.45">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
-    </Reference>
-    <Reference Include="sfw.net">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.UnityShim">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Logging">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -681,18 +681,6 @@
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
@@ -723,6 +711,9 @@
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
@@ -744,8 +735,14 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
@@ -767,6 +764,9 @@
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>G:/Coding/GameBuilds/Dungeon Generator 8-25-2020/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
