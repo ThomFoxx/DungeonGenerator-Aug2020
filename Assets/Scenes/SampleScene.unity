@@ -368,7 +368,7 @@ MonoBehaviour:
   _starterRooms:
   - {fileID: 2729237056595955335, guid: b9c7f73cbb9617a4c82234a257216bbf, type: 3}
   _exitChance: 100
-  _roomLimit: 3
+  _roomLimit: 4
 --- !u!4 &1786975300
 Transform:
   m_ObjectHideFlags: 0

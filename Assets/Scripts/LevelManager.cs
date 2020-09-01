@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private Queue<GameObject> _rooms = new Queue<GameObject>();
     [SerializeField][Range (0,100)]
     private int _exitChance = 50;
+    private Quaternion _zeroRot = new Quaternion(0, 0, 0, 0);
 
     [SerializeField]//debugging tool
     private int _roomLimit;
@@ -85,7 +86,7 @@ Spawn:
         spawncheck++;
         int exitcheck = 0;
         _spawnRoomPrefab = _roomPrefabs[Random.Range(0, _roomPrefabs.Length - 1)];
-        _testingRoom = Instantiate(_spawnRoomPrefab, _currentRoom.transform);
+        _testingRoom = Instantiate(_spawnRoomPrefab, _currentRoom.transform, true);
         _testingRoom.name = _roomCount.ToString();
         _testingRoomScript = _testingRoom.GetComponent<LevelRoom>();
         #endregion
@@ -99,8 +100,7 @@ Spawn:
 
         #region MoveRoom To Join Exits
         RoomRotation(exit, _joinedExit);
-        //float tempRot = (exit.rotation.eulerAngles.y + 180) + _testingRoom.transform.rotation.eulerAngles.y;
-        //_testingRoom.transform.rotation = Quaternion.Euler(0, tempRot, 0);
+        
 #endregion
 
         if (!ColliderCheck(_testingRoom) && exitcheck < 10)
@@ -188,122 +188,127 @@ Spawn:
     private void RoomRotation (Transform Exit, Transform JoinedExit)
     {
         Vector3 TempVector = Exit.position;
-        Vector3 Offset = JoinedExit.localPosition;
-
+        //Vector3 Offset = JoinedExit.localPosition;
+        Vector3 Offset = JoinedExit.GetComponent<ExitInfo>().offset;
+        
         float TempX = Offset.x;
         float TempZ = Offset.z;
         int TempRot = 0;
 
-        if (Mathf.Round(Exit.rotation.eulerAngles.y) == 0)
+        int ExitRoomAngle = GetCardinalDirection(Exit.parent, false);
+        int ExitAngle = GetCardinalDirection(Exit, true);
+        int JoinedAngle = GetCardinalDirection(JoinedExit, true);
+
+        if (ExitAngle + ExitRoomAngle == 0)
         {
-            switch (Mathf.Round(JoinedExit.rotation.eulerAngles.y))
+            switch (JoinedAngle)
             {
                 case 0:
                     TempVector.x = TempVector.x + TempX;
                     TempVector.z = TempVector.z + TempZ;
-                    TempRot = 180;
+                    TempRot = 180;// + ExitRoomAngle;
                     break;
                 case 90:
                     TempVector.x = TempVector.x - TempZ;
                     TempVector.z = TempVector.z + TempX;
-                    TempRot = 90;
+                    TempRot = 90;// + ExitRoomAngle;
                     break;
                 case 180:
                     TempVector.x = TempVector.x - TempX;
                     TempVector.z = TempVector.z - TempZ;
-                    TempRot = 0;
+                    TempRot = 0;// + ExitRoomAngle;
                     break;
                 case 270:
                     TempVector.x = TempVector.x + TempZ;
                     TempVector.z = TempVector.z - TempX;
-                    TempRot = -90;
+                    TempRot = 270;//+ ExitRoomAngle;
                     break;
                 default:
                     Debug.Log("Something went Wrong. Rot0");
                     break;
             }
         }
-        else if (Mathf.Round(Exit.rotation.eulerAngles.y) == 90)
+        else if (ExitAngle + ExitRoomAngle == 90)
         {
-            switch (Mathf.Round(JoinedExit.rotation.eulerAngles.y))
+            switch (JoinedAngle)
             {
                 case 0:
                     TempVector.x = TempVector.x + TempZ;
                     TempVector.z = TempVector.z - TempX;
-                    TempRot = -90;
+                    TempRot = 270;// + ExitRoomAngle;
                     break;
                 case 90:
                     TempVector.x = TempVector.x + TempX;
                     TempVector.z = TempVector.z + TempZ;
-                    TempRot = 180;
+                    TempRot = 180;// + ExitRoomAngle;
                     break;
                 case 180:
                     TempVector.x = TempVector.x - TempZ;
                     TempVector.z = TempVector.z - TempX;
-                    TempRot = 90;
+                    TempRot = 90;// + ExitRoomAngle;
                     break;
                 case 270:
                     TempVector.x = TempVector.x - TempX;
                     TempVector.z = TempVector.z - TempZ;
-                    TempRot = 0;
+                    TempRot = 0;// + ExitRoomAngle;
                     break;
                 default:
                     Debug.Log("Something went Wrong. Rot90");
                     break;
             }
         }
-        else if (Mathf.Round(Exit.rotation.eulerAngles.y) == 180)
+        else if (ExitAngle + ExitRoomAngle == 180)
         {
-            switch (Mathf.Round(JoinedExit.rotation.eulerAngles.y))
+            switch (JoinedAngle)
             {
                 case 0:
                     TempVector.x = TempVector.x - TempX;
                     TempVector.z = TempVector.z - TempZ;
-                    TempRot = 0;
+                    TempRot = 0;// + ExitRoomAngle;
                     break;
                 case 90:
                     TempVector.x = TempVector.x - TempZ;
                     TempVector.z = TempVector.z - TempX;
-                    TempRot = 270;
+                    TempRot = 270;// + ExitRoomAngle;
                     break;
                 case 180:
                     TempVector.x = TempVector.x + TempX;
                     TempVector.z = TempVector.z + TempZ;
-                    TempRot = 180;
+                    TempRot = 180;// + ExitRoomAngle;
                     break;
                 case 270:
                     TempVector.x = TempVector.x + TempZ;
                     TempVector.z = TempVector.z + TempX;
-                    TempRot = 90;
+                    TempRot = 90;// + ExitRoomAngle;
                     break;
                 default:
                     Debug.Log("Something went Wrong. Rot180");
                     break;
             }
         }
-        else if (Mathf.Round(Exit.rotation.eulerAngles.y) == 270 || Mathf.Round(Exit.rotation.eulerAngles.y) == -90)
+        else if (ExitAngle + ExitRoomAngle == 270)
         {
-            switch (Mathf.Round(JoinedExit.rotation.eulerAngles.y))
+            switch (JoinedAngle)
             {
                 case 0:
                     TempVector.x = TempVector.x - TempZ;
                     TempVector.z = TempVector.z + TempX;
-                    TempRot = 180;
+                    TempRot = 90;// + ExitRoomAngle;
                     break;
                 case 90:
                     TempVector.x = TempVector.x - TempX;
                     TempVector.z = TempVector.z - TempZ;
-                    TempRot = 0;
+                    TempRot = 0;// + ExitRoomAngle;
                     break;
                 case 180:
                     TempVector.x = TempVector.x + TempZ;
                     TempVector.z = TempVector.z - TempX;
-                    TempRot = -90;
+                    TempRot = 270;//+ ExitRoomAngle;
                     break;
                 case 270:
                     TempVector.x = TempVector.x - TempX;
                     TempVector.z = TempVector.z + TempZ;
-                    TempRot = 90;
+                    TempRot = 180;// + ExitRoomAngle;
                     break;
                 default:
                     Debug.Log("Something went Wrong. Rot270");
@@ -315,7 +320,36 @@ Spawn:
             Debug.Log("Problem with Rotation " + Mathf.Round(Exit.rotation.eulerAngles.y) + " " + Mathf.Round(JoinedExit.rotation.eulerAngles.y));
         }
 
-        _testingRoom.transform.position = TempVector; ///New Room Position
         _testingRoom.transform.rotation = Quaternion.Euler(0, TempRot, 0);
+        _testingRoom.transform.position = TempVector; ///New Room Position
+        
+    }
+
+    private int GetCardinalDirection(Transform checkedObject, bool local)
+    {
+        //Returns a INT angle 'Normalized' to the N,E,S,W on the Y Axis
+        float CheckAngle = 0;
+        
+        if (local)
+            CheckAngle = checkedObject.localRotation.eulerAngles.y;
+        else
+            CheckAngle = checkedObject.rotation.eulerAngles.y;
+
+        int ReturnedAngle = 0;
+
+        if ((CheckAngle <= 45 && CheckAngle >= -45) || (CheckAngle >= 315 && CheckAngle <= 360))
+            ReturnedAngle = 0;
+        else if (CheckAngle > 45 && CheckAngle <= 135)
+            ReturnedAngle = 90;
+        else if ((CheckAngle > 135 && CheckAngle <= 225) || (CheckAngle >= -135 && CheckAngle <= -180))
+            ReturnedAngle = 180;
+        else if ((CheckAngle > 225 && CheckAngle < 315) || (CheckAngle <= -45 && CheckAngle >= 135))
+            ReturnedAngle = 270;
+        else
+            Debug.Log("Problem in Cardinal Check");
+
+        //Debug.Log(checkedObject.name + "'s angle = " + ReturnedAngle, checkedObject);
+
+        return ReturnedAngle;
     }
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-08-26T22:06:38.139-05:00
-  initializedAtString: 2020-08-26T18:03:45.234-05:00
+  lastUpdatedAtString: 2020-08-31T23:02:58.756-05:00
+  initializedAtString: 2020-08-31T19:26:04.300-05:00
   currentGitRemote:
     name: origin
     url: https://github.com/ThomFoxx/DungeonGenerator-Aug2020.git
@@ -25,13 +25,13 @@ MonoBehaviour:
     token: 
   currentGitBranch:
     name: master
-    tracking: 
+    tracking: origin/master
   currentConfigBranch:
     name: master
     remote:
-      name: 
-      url: 
-    trackingBranch: 
+      name: origin
+      url: https://github.com/ThomFoxx/DungeonGenerator-Aug2020.git
+    trackingBranch: master
   currentConfigRemote:
     name: origin
     url: https://github.com/ThomFoxx/DungeonGenerator-Aug2020.git
