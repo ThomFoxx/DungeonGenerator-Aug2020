@@ -13,16 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2020-08-31T23:03:13.081-05:00
-  initializedAtString: 2020-08-31T19:26:08.160-05:00
+  lastUpdatedAtString: 2020-09-01T21:24:00.327-05:00
+  initializedAtString: 2020-09-01T20:32:13.783-05:00
   entries:
-  - path: .vs\Dungeon Generator 8-25-2020\v15\.suo
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\.vs\Dungeon Generator
-      8-25-2020\v15\.suo
-    projectPath: .vs\Dungeon Generator 8-25-2020\v15\.suo
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: .vs\Dungeon Generator 8-25-2020\v15\Server\sqlite3\storage.ide
     fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\.vs\Dungeon Generator
       8-25-2020\v15\Server\sqlite3\storage.ide
@@ -62,42 +55,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\06\06846bab68408053927bc18fd20b7774
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\Artifacts\06\06846bab68408053927bc18fd20b7774
-    projectPath: Library\Artifacts\06\06846bab68408053927bc18fd20b7774
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Library\Artifacts\58\5831d2f9107aa87e30983a8ac2560052
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\Artifacts\58\5831d2f9107aa87e30983a8ac2560052
-    projectPath: Library\Artifacts\58\5831d2f9107aa87e30983a8ac2560052
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Library\Artifacts\8f\8f73fd44eb2ca7a1e6e55672f435f66d
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\Artifacts\8f\8f73fd44eb2ca7a1e6e55672f435f66d
-    projectPath: Library\Artifacts\8f\8f73fd44eb2ca7a1e6e55672f435f66d
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Library\Artifacts\99\9957388b1dca83899c19282304a6efa3
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\Artifacts\99\9957388b1dca83899c19282304a6efa3
-    projectPath: Library\Artifacts\99\9957388b1dca83899c19282304a6efa3
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Library\Artifacts\d0\d0b06d3362111736a3799f12ab5c282d
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\Artifacts\d0\d0b06d3362111736a3799f12ab5c282d
-    projectPath: Library\Artifacts\d0\d0b06d3362111736a3799f12ab5c282d
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Library\CurrentLayout-default.dwlt
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\CurrentLayout-default.dwlt
-    projectPath: Library\CurrentLayout-default.dwlt
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Library\gfu\cache\gitlocks.yaml
     fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\gfu\cache\gitlocks.yaml
     projectPath: Library\gfu\cache\gitlocks.yaml
@@ -122,21 +79,9 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\gfu\cache\gituser.yaml
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\gfu\cache\gituser.yaml
-    projectPath: Library\gfu\cache\gituser.yaml
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Library\gfu\cache\repoinfo.yaml
     fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\gfu\cache\repoinfo.yaml
     projectPath: Library\gfu\cache\repoinfo.yaml
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Library\InspectorExpandedItems.asset
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\InspectorExpandedItems.asset
-    projectPath: Library\InspectorExpandedItems.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -182,27 +127,15 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Library\SourceAssetDB
     fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\SourceAssetDB
     projectPath: Library\SourceAssetDB
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Library\StateCache\Hierarchy\4ab0f1-905396a8b049c05488.json
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\StateCache\Hierarchy\4ab0f1-905396a8b049c05488.json
-    projectPath: Library\StateCache\Hierarchy\4ab0f1-905396a8b049c05488.json
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Library\StateCache\Hierarchy\4ab0f1-b79abcb9ee32626469.json
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\StateCache\Hierarchy\4ab0f1-b79abcb9ee32626469.json
-    projectPath: Library\StateCache\Hierarchy\4ab0f1-b79abcb9ee32626469.json
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Library\StateCache\Hierarchy\4ab0f1-b839185e8530797479.json
-    fullPath: G:\Coding\GameBuilds\Dungeon Generator 8-25-2020\Library\StateCache\Hierarchy\4ab0f1-b839185e8530797479.json
-    projectPath: Library\StateCache\Hierarchy\4ab0f1-b839185e8530797479.json
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3

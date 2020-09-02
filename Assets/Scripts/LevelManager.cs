@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -19,7 +20,8 @@ public class LevelManager : MonoBehaviour
     private Queue<GameObject> _rooms = new Queue<GameObject>();
     [SerializeField][Range (0,100)]
     private int _exitChance = 50;
-    private Quaternion _zeroRot = new Quaternion(0, 0, 0, 0);
+    private bool _isChecking = false;
+    private bool _isEndFrame = false;
 
     [SerializeField]//debugging tool
     private int _roomLimit;
@@ -38,13 +40,15 @@ public class LevelManager : MonoBehaviour
         _currentRoom.name = _roomCount.ToString();
         _roomCount++;
         _rooms.Enqueue(_currentRoom);
-        StartCoroutine(ExitSetup());
+        ExitSetup();
     }
 
-    private IEnumerator ExitSetup()
+    private async void ExitSetup()
     {
         while (_currentRoom != null && _roomCount < _roomLimit)
         {
+            
+
             _currentRoomScript = _currentRoom.GetComponent<LevelRoom>();
 
             foreach (Transform exit in _currentRoomScript.Exits)
@@ -56,10 +60,19 @@ public class LevelManager : MonoBehaviour
                 else
                 {
                     exit.gameObject.SetActive(false);
+                    //StartCoroutine(NewRoom(exit));
                     NewRoom(exit);
                 }
             }
-            _rooms?.Dequeue();
+
+            while (_isChecking)
+            {
+                await Task.Yield();
+                //yield return new WaitForEndOfFrame();
+            }
+            //yield return new WaitForFixedUpdate();            
+
+            //_rooms?.Dequeue();
             while (_rooms.Count > 0)
             {
                 if (_rooms.Peek() != null)
@@ -70,16 +83,27 @@ public class LevelManager : MonoBehaviour
                 else
                     _rooms.Dequeue();
             }
-            yield return new WaitForEndOfFrame();
+
+            //yield return new WaitForEndOfFrame();
+            _roomCount++;
+            
         }
-        yield return null;
-        Debug.Log("Generation Complete");
+        //yield return null;
+        if (!_isChecking)
+        {
+            Debug.Log("Generation Complete");
+            StopAllCoroutines();
+        }
     }
 
-    private void NewRoom(Transform exit)
+    private async void NewRoom(Transform exit)
     {
+        while (_isChecking)
+        {
+            await Task.Yield();
+        }
+        _isChecking = true;
         int spawncheck = 0;
-
 
 #region SpawnRandomRoom
 Spawn:
@@ -89,10 +113,10 @@ Spawn:
         _testingRoom = Instantiate(_spawnRoomPrefab, _currentRoom.transform, true);
         _testingRoom.name = _roomCount.ToString();
         _testingRoomScript = _testingRoom.GetComponent<LevelRoom>();
-        #endregion
+#endregion
 
-        #region RandomExit
-        PickExit:
+#region RandomExit
+PickExit:
         exitcheck++;
         _joinedExit = _testingRoomScript.Exits[Random.Range(0, _testingRoomScript.Exits.Length - 1)];
         _joinedExit.gameObject.SetActive(false);
@@ -100,32 +124,38 @@ Spawn:
 
         #region MoveRoom To Join Exits
         RoomRotation(exit, _joinedExit);
-        
-#endregion
 
-        if (!ColliderCheck(_testingRoom) && exitcheck < 10)
-        {
-            goto PickExit;
-        }
-        else if (!ColliderCheck(_testingRoom) && exitcheck > 10)
-        {
-            if (spawncheck < 10)
-                goto Spawn;
+        #endregion
+
+        //yield return new WaitForEndOfFrame();
+        
+            if (!ColliderCheck(_testingRoom) && exitcheck < 20)
+            {
+                goto PickExit;
+            }
+            else if (!ColliderCheck(_testingRoom) && exitcheck > 10)
+            {
+                if (spawncheck < 10)
+                    goto Spawn;
+                else
+                {
+                    Destroy(_testingRoom.gameObject);
+                    exit.gameObject.SetActive(true);
+                }
+            }
             else
             {
-                Destroy(_testingRoom.gameObject);
-                exit.gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            _rooms.Enqueue(_testingRoom);
-            _testingRoom.transform.parent = null;
-            _testingRoom.transform.name = exit.name + " to " + _joinedExit.name;
-            _roomCount++;
-        }
+                //_rooms?.Dequeue();
+                _rooms.Enqueue(_testingRoom);
+                _testingRoom.transform.parent = null;
+                _testingRoom.transform.name = "(" + exit.parent.name + ")" + exit.name + " to " + _joinedExit.name;
+                //_roomCount++;
+                _isChecking = false;
+                _isEndFrame = false;                
+            }               
     }
 
+    
     private bool ColliderCheck(GameObject RoomToCheck)
     {      
         //returns TRUE if free of Collisions
