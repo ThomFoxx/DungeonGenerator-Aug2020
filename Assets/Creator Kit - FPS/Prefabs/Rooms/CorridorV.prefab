@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 6, y: 0, z: 5}
+  _validExit: 0
 --- !u!1 &3916511574846275013
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdae9261c8f63a4ea8332523b72c3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 6, y: 0, z: 4}
+  offset: {x: 6, y: 0, z: -4}
+  _validExit: 0
 --- !u!1 &3916511574846275015
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 10, y: 0, z: 0}
+  _validExit: 0
 --- !u!1 &3916511574846275017
 GameObject:
   m_ObjectHideFlags: 0
